@@ -53,6 +53,12 @@
     grid-template-rows: 1fr 1fr;
 }
 
+.form-container{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
 .wrap-row{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -194,6 +200,7 @@ button img{
     align-content: center;
     max-width: 500px;
     justify-self: center;
+    align-self: center;
 }
 
 #texts hr {
@@ -306,6 +313,7 @@ h2 {
 
 .lower-header {
     display: flex;
+    z-index: 10000;
     position: sticky;
     background-color: white;
     top: 0;
@@ -341,4 +349,55 @@ a {
 
 a:hover {
     color: red;
+}
+
+@media screen and (max-width: 900px){
+    .wrap-row{
+       grid-template-columns: 1fr 1fr; 
+       grid-template-rows: 1fr 1fr; 
+    }
+    #skills{
+       grid-template-columns: 1fr 1fr; 
+       grid-template-rows: 1fr 1fr; 
+    }
+    .services-container, .works-container, .contact-container{
+        height:200vh;
+    }
+    
+    #works{
+       grid-template-columns: 1fr 1fr; 
+       grid-template-rows: 1fr 1fr 1fr; 
+    }
+}
+@media screen and (min-width: 600px) {
+    .lower-header ul{
+        margin-left: 40px;
+    }
+}
+@media screen and (max-width: 600px) {
+     .works-container, .contact-container{
+        height:400vh;
+    }
+    .form-container{
+        height: 150vh;
+    }
+    .wrap-row{
+        grid-template-columns: 1fr;
+       grid-template-rows:repeat(4, 1fr); 
+    }
+    #skills{
+         grid-template-columns: 1fr;
+       grid-template-rows: repeat(4, 1fr); 
+    }
+    #works{
+        grid-template-columns:  1fr;
+       grid-template-rows: repeat(3,1fr); 
+    }
+    .lower-header{
+        padding: 1em 2em;
+    }
+    .services-container{
+        height: 300vh;
+        grid-template-rows: 1fr 4fr;
+    }
 }
